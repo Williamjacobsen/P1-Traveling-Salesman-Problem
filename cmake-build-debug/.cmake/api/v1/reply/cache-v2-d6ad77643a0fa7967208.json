@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/villi/CLionProjects/2opt/cmake-build-debug"
+			"value" : "c:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/villi/CLionProjects/2opt"
+			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/untitled1"
+			"value" : "C:/Program Files (x86)/main"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1147,7 +1147,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/cmake-build-debug"
+			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug"
 		},
 		{
 			"name" : "main_IS_TOP_LEVEL",
@@ -1171,43 +1171,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt"
-		},
-		{
-			"name" : "untitled1_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/cmake-build-debug"
-		},
-		{
-			"name" : "untitled1_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "untitled1_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt"
+			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP"
 		}
 	],
 	"kind" : "cache",

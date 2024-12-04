@@ -116,7 +116,7 @@ void two_opt(Coordinate coordinates[], int length_coordinates)
     }
 }
 
-void better_two_opt()
+void better_two_opt() // does not support doubles
 {
     //Coordinate path[] = {
     //    {2, 1},
@@ -129,25 +129,15 @@ void better_two_opt()
     //    {3, 3},
     //};
     Coordinate path[] = {
-        {4, 4},
-        {6, 3},
-        {6, 5},
-        {4, 7},
-        {2, 5},
-        {2, 7},
-        {4, 6},
-        {2, 2},
-        {3, 2},
-        {6, 1},
-        {5, 2},
-        {3, 1},
-        {1, 1},
-        {1, 4},
-        {6, 7},
-        {8, 6},
-        {8, 3},
+        {7, 2},
+        {4, 3},
+        {10, 6},
         {9, 4},
-        {9, 1},
+        {9, 3},
+        {8, 7},
+        {5, 7},
+        {4, 6},
+        {2, 5},
     };
     int length_coordinates = sizeof(path)/sizeof(path[0]);
     //path[length_coordinates - 1] = path[0];
