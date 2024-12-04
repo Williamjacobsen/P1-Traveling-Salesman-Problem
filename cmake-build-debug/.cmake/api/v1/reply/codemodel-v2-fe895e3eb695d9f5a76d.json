@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug",
-		"source" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP"
+		"build" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/cmake-build-debug",
+		"source" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem"
 	},
 	"version" : 
 	{

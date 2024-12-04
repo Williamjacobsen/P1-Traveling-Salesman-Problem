@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug"
+			"value" : "c:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP"
+			"value" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1147,7 +1147,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP/cmake-build-debug"
+			"value" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/cmake-build-debug"
 		},
 		{
 			"name" : "main_IS_TOP_LEVEL",
@@ -1171,7 +1171,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/villi/CLionProjects/2opt/2-opt-TSP"
+			"value" : "C:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem"
 		}
 	],
 	"kind" : "cache",
