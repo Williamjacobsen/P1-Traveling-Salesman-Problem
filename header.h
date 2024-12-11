@@ -9,6 +9,8 @@ typedef struct
     int x, y;
 } city;
 
+
+
 int random_coordinate_generator();
 void run_two_opt();
 void help();

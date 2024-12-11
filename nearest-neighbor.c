@@ -4,7 +4,7 @@
 #include "header.h"
 
 // Calculate the distance between two given cities
-double distance(const city* a, const city* b)
+double distance_nn(const city* a, const city* b)
 {
     int dx = a->x - b->x; // Calculate Delta x
     int dy = a->y - b->y; // Calculate Delta y
@@ -46,7 +46,7 @@ double nearest_neighbor(city* cities, int number_of_cities, int start_city, city
         {
             if (!visited[i])
             {
-                current_dist = distance(&cities[current_city_index], &cities[i]);
+                current_dist = distance_nn(&cities[current_city_index], &cities[i]);
                 if (current_dist < closest_dist)
                 {
                     closest_dist = current_dist;
@@ -67,7 +67,7 @@ double nearest_neighbor(city* cities, int number_of_cities, int start_city, city
     }
 
     // Add the distance from the last unvisited city to the starting city, to the total distance
-    total_dist += distance(&cities[current_city_index], &cities[start_city]);
+    total_dist += distance_nn(&cities[current_city_index], &cities[start_city]);
 
     // Add the start city to the end of the tour, since the TSP returns back to the starting city
     solution[cities_added] = &cities[start_city];
