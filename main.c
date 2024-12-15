@@ -9,6 +9,9 @@
 #include <conio.h>
 #include "header.h"
 
+/*
+    intro() is used for showing the "banner" or fancy menu screen
+*/
 void intro()
 {
     system("cls");
@@ -16,9 +19,15 @@ void intro()
     printf("\n    === Menu ===\n\n");
 }
 
+/*
+    print_options() is used to print the available commands / the options the user has,
+    it also highlights the currently selected option
+*/
 void print_options(int count, const char* options[], int current)
 {
-    intro();
+    intro(); // show menu banner
+
+    // print options
     for (int i = 0; i < count; i++)
     {
         if (i == current)
@@ -32,6 +41,11 @@ void print_options(int count, const char* options[], int current)
     }
 }
 
+/*
+    menu() is a function that listens to user input,
+    if down arrow key is pressed the next option will be highlighted,
+    also allows user to simply write the number of the option they want
+*/
 int menu(const char* options[], int count)
 {
     int current = -1;
@@ -41,23 +55,23 @@ int menu(const char* options[], int count)
     {
         print_options(count, options, current);
 
-        int choice = _getch();
+        int choice = _getch(); // get key
         switch (choice)
         {
         case 13: // Enter key
             loop = 0;
             break;
         case 80: // Down arrow
-            current = (current + 1) % count;
+            current = (current + 1) % count; // % count, is used in case, the user goes below the options, so it just goes back to the top
             break;
         case 72: // Up arrow
             current = (current - 1 + count) % count;
             break;
         default:
-            if (choice >= '1' && choice <= '9')
+            if (choice >= '1' && choice <= '9') // if it is a number (so letters don't work)
             {
-                int selected = choice - '1';
-                if (selected < count)
+                int selected = choice - '1'; // the index is starting from 0, and user writes 1 to get option 0, (so -1 is needed)
+                if (selected < count) // in case user writes 7 when there only is 4 options
                 {
                     current = selected;
                     loop = 0;

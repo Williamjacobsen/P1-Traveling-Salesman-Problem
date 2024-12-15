@@ -4,7 +4,7 @@ project(main C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(main main.c
-        generate-random-coordianates.c
+        generate-random-coordinates.c
         header.h
         two-opt.c
         help.c

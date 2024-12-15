@@ -55,8 +55,8 @@ build CMakeFiles/main.dir/main.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/generate-random-coordianates.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/generate-random-coordianates.c || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles\main.dir\generate-random-coordianates.c.obj.d
+build CMakeFiles/main.dir/generate-random-coordinates.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/generate-random-coordinates.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\generate-random-coordinates.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir
@@ -75,12 +75,6 @@ build CMakeFiles/main.dir/help.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users
 
 build CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/get-coordinates-from-terminal.c || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles\main.dir\get-coordinates-from-terminal.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-
-build CMakeFiles/main.dir/path-finding.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/path-finding.c || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles\main.dir\path-finding.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir
@@ -111,7 +105,7 @@ build CMakeFiles/main.dir/travel-cost.c.obj: C_COMPILER__main_unscanned_Debug C$
 #############################################
 # Link the executable main.exe
 
-build main.exe: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.c.obj CMakeFiles/main.dir/generate-random-coordianates.c.obj CMakeFiles/main.dir/two-opt.c.obj CMakeFiles/main.dir/help.c.obj CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj CMakeFiles/main.dir/path-finding.c.obj CMakeFiles/main.dir/nearest-neighbor.c.obj CMakeFiles/main.dir/read-from-file.c.obj CMakeFiles/main.dir/travel-cost.c.obj
+build main.exe: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.c.obj CMakeFiles/main.dir/generate-random-coordinates.c.obj CMakeFiles/main.dir/two-opt.c.obj CMakeFiles/main.dir/help.c.obj CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj CMakeFiles/main.dir/nearest-neighbor.c.obj CMakeFiles/main.dir/read-from-file.c.obj CMakeFiles/main.dir/travel-cost.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\main.dir
