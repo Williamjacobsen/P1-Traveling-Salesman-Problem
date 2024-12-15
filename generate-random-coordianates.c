@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void generate_coordinates(int num_coordinates, Coordinate *coordinates, int min_range, int max_range)
+void generate_coordinates(int num_coordinates, Coordinate* coordinates, int min_range, int max_range)
 {
     // Seed for random number generation
     srand(time(NULL));
@@ -16,7 +16,7 @@ void generate_coordinates(int num_coordinates, Coordinate *coordinates, int min_
     }
 }
 
-Coordinate* random_coordinate_generator(int *num_coordinates)
+Coordinate* random_coordinate_generator(int* num_coordinates)
 {
     // Get number of coordinates from the user
     printf("Enter the number of coordinates to generate: ");
@@ -36,7 +36,7 @@ Coordinate* random_coordinate_generator(int *num_coordinates)
     }
 
     // Dynamically allocate memory for the coordinates array
-    Coordinate *coordinates = (Coordinate *)malloc(sizeof(Coordinate) * (*num_coordinates));
+    Coordinate* coordinates = (Coordinate*)malloc(sizeof(Coordinate) * (*num_coordinates));
     if (coordinates == NULL)
     {
         printf("Memory allocation failed.\n");

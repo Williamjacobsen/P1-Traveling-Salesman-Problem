@@ -67,7 +67,8 @@ Coordinate* read_from_file(int* number_of_coordinates)
     fclose(input_file);
 
     // If not all coordinates were read, free memory and return NULL
-    if (number_of_coordinates_read != *number_of_coordinates) {
+    if (number_of_coordinates_read != *number_of_coordinates)
+    {
         printf("Error reading all coordinates from the file.\n");
         free(input_coordinates);
         return NULL;

@@ -1,5 +1,7 @@
-#define default_speed 50
+#include <math.h>
 #include "header.h"
+
+#define default_speed 50
 
 double fdistance(const Coordinate a, const Coordinate b)
 {
@@ -9,7 +11,8 @@ double fdistance(const Coordinate a, const Coordinate b)
 // y=0.0000002711x**4-0.0001112337x**3+0.0169499556x**2-1.0643099998x+29.473711506
 double fuelLitersSpentAtSpeed(int x)
 {
-    return (0.0000002711 * (x*x*x*x) - 0.0001112337 * (x*x*x) + 0.0169499556 * (x*x) - 1.0643099998 * x + 29.473711506) / 100;
+    return (0.0000002711 * (x * x * x * x) - 0.0001112337 * (x * x * x) + 0.0169499556 * (x * x) - 1.0643099998 * x +
+        29.473711506) / 100;
 }
 
 double travelCost(Coordinate from, Coordinate to, struct specialRoad specialRoads[], int amountOfSpecialRoads)

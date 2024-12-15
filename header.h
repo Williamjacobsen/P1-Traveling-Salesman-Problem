@@ -1,11 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <math.h>
-
-
-// todo: make functions work together
-
 typedef struct
 {
     char id;
@@ -25,15 +20,14 @@ struct specialRoad
     int speed;
 };
 
-
 double travelCost(Coordinate from, Coordinate to, struct specialRoad specialRoads[], int amountOfSpecialRoads);
-Coordinate* random_coordinate_generator(int *num_coordinates);
+Coordinate* random_coordinate_generator(int* num_coordinates);
 Coordinate* read_from_file(int* number_of_coordinates);
 double two_opt(Coordinate* path, int length_coordinates, Coordinate* solution[length_coordinates]);
 void help_input();
 void help_algorithm();
 Coordinate* get_coordinates_from_terminal(int* coordinate_count);
-void path_finding();
-double nearest_neighbor(Coordinate* coordinates, int number_of_coordinates, int start_coordinate, Coordinate* solution[number_of_coordinates]);
+double nearest_neighbor(Coordinate* coordinates, int number_of_coordinates, int start_coordinate,
+                        Coordinate* solution[number_of_coordinates]);
 
 #endif //HEADER_H
