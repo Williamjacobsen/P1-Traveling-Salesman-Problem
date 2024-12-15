@@ -9,7 +9,8 @@ add_executable(main main.c
         two-opt.c
         help.c
         get-coordinates-from-terminal.c
-        path-finding.c
-        nearest-neighbor.c)
+        nearest-neighbor.c
+        read-from-file.c
+        travel-cost.c)
 
 

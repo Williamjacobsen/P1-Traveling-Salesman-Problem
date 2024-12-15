@@ -91,6 +91,18 @@ build CMakeFiles/main.dir/nearest-neighbor.c.obj: C_COMPILER__main_unscanned_Deb
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir
 
+build CMakeFiles/main.dir/read-from-file.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/read-from-file.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\read-from-file.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+
+build CMakeFiles/main.dir/travel-cost.c.obj: C_COMPILER__main_unscanned_Debug C$:/Users/villi/CLionProjects/P1-Traveling-Salesman-Problem/travel-cost.c || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\travel-cost.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target main
@@ -99,7 +111,7 @@ build CMakeFiles/main.dir/nearest-neighbor.c.obj: C_COMPILER__main_unscanned_Deb
 #############################################
 # Link the executable main.exe
 
-build main.exe: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.c.obj CMakeFiles/main.dir/generate-random-coordianates.c.obj CMakeFiles/main.dir/two-opt.c.obj CMakeFiles/main.dir/help.c.obj CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj CMakeFiles/main.dir/path-finding.c.obj CMakeFiles/main.dir/nearest-neighbor.c.obj
+build main.exe: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.c.obj CMakeFiles/main.dir/generate-random-coordianates.c.obj CMakeFiles/main.dir/two-opt.c.obj CMakeFiles/main.dir/help.c.obj CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj CMakeFiles/main.dir/path-finding.c.obj CMakeFiles/main.dir/nearest-neighbor.c.obj CMakeFiles/main.dir/read-from-file.c.obj CMakeFiles/main.dir/travel-cost.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\main.dir

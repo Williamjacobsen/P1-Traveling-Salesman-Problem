@@ -1,13 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "header.h"
 
-void get_coordinates_from_terminal()
+Coordinate* get_coordinates_from_terminal(int* coordinate_count)
 {
-    float x, y;
+    int x, y;
     char input[100];
-    float coordinates[100][2]; // Array to store up to 100 pairs of coordinates
+    Coordinate* coordinates = NULL; // Dynamically allocated array for coordinates
+    int capacity = 10; // Initial capacity for the array
     int count = 0; // Counter to track the number of coordinates entered
+
+    coordinates = malloc(capacity * sizeof(Coordinate));
+    if (!coordinates)
+    {
+        fprintf(stderr, "Memory allocation failed.\n");
+        exit(1);
+    }
 
     printf("Enter coordinates as 'x y' or type 'finished' to stop:\n");
 
@@ -23,26 +32,33 @@ void get_coordinates_from_terminal()
             break;
         }
 
-
-        if (sscanf(input, "%f %f", &x, &y) == 2)
+        // Parse the input into integers x and y
+        if (sscanf(input, "%d %d", &x, &y) == 2)
         {
+            // Expand the array if necessary
+            if (count >= capacity)
+            {
+                capacity *= 2;
+                Coordinate* temp = realloc(coordinates, capacity * sizeof(Coordinate));
+                if (!temp)
+                {
+                    fprintf(stderr, "Memory reallocation failed.\n");
+                    free(coordinates);
+                    exit(1);
+                }
+                coordinates = temp;
+            }
+
             // Store the coordinates
-            if (count < 100)
-            {
-                coordinates[count][0] = x;
-                coordinates[count][1] = y;
-                count++;
-            }
-            else
-            {
-                printf("Coordinate storage is full.\n");
-                break;
-            }
-            printf("You entered: x = %.8f, y = %.8f\n", x, y);
+            coordinates[count].x = x;
+            coordinates[count].y = y;
+            count++;
+
+            printf("You entered: x = %d, y = %d\n", x, y);
         }
         else
         {
-            printf("Invalid input. Please enter two coordinates or 'finished'.\n");
+            printf("Invalid input. Please enter two integer coordinates or 'finished'.\n");
         }
     }
 
@@ -50,6 +66,9 @@ void get_coordinates_from_terminal()
     printf("\nYou entered the following coordinates:\n");
     for (int i = 0; i < count; i++)
     {
-        printf("Coordinate %d: x = %.8f, y = %.8f\n", i + 1, coordinates[i][0], coordinates[i][1]);
+        printf("Coordinate %d: x = %d, y = %d\n", i + 1, coordinates[i].x, coordinates[i].y);
     }
+
+    *coordinate_count = count;
+    return coordinates;
 }

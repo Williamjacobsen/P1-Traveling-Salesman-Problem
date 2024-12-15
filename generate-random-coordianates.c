@@ -3,39 +3,49 @@
 #include <stdlib.h>
 #include <time.h>
 
-void generate_coordinates(int num_coordinates, int x_coordinate[], int y_coordinate[])
+void generate_coordinates(int num_coordinates, Coordinate *coordinates, int min_range, int max_range)
 {
-    // Seed så det bliver random koordinat hver gang
+    // Seed for random number generation
     srand(time(NULL));
 
-    // Generate random coordinates
+    // Generate random coordinates within the specified range
     for (int i = 0; i < num_coordinates; i++)
     {
-        x_coordinate[i] = rand() % 100;
-        // Tilfældigt nummer mellem 0 og 99 da koordinater går så langt, men er sku ikke sikker på hvordan koordinater fungerer så måske ik
-        y_coordinate[i] = rand() % 100;
+        coordinates[i].x = rand() % (max_range - min_range + 1) + min_range;
+        coordinates[i].y = rand() % (max_range - min_range + 1) + min_range;
     }
 }
 
-int random_coordinate_generator()
+Coordinate* random_coordinate_generator(int *num_coordinates)
 {
-    int num_coordinates;
+    // Get number of coordinates from the user
     printf("Enter the number of coordinates to generate: ");
-    scanf("%d", &num_coordinates);
+    scanf("%d", num_coordinates);
 
-    // Initialiser ints så den opbevarer som arrays
-    int x_coords[num_coordinates];
-    int y_coords[num_coordinates];
+    // Get the range for coordinates from the user
+    int min_range, max_range;
+    printf("Enter the minimum range: ");
+    scanf("%d", &min_range);
+    printf("Enter the maximum range: ");
+    scanf("%d", &max_range);
 
-    // Kald funktionen
-    generate_coordinates(num_coordinates, x_coords, y_coords);
-
-    // Print, men kan fjernes hvis de ikke skal printes bare bruges
-    printf("Generated coordinates:\n");
-    for (int i = 0; i < num_coordinates; i++)
+    if (min_range > max_range)
     {
-        printf("Coordinate %d: (%d, %d)\n", i + 1, x_coords[i], y_coords[i]);
+        printf("Invalid range. Minimum range cannot be greater than maximum range.\n");
+        return NULL;
     }
 
-    return 0;
+    // Dynamically allocate memory for the coordinates array
+    Coordinate *coordinates = (Coordinate *)malloc(sizeof(Coordinate) * (*num_coordinates));
+    if (coordinates == NULL)
+    {
+        printf("Memory allocation failed.\n");
+        return NULL;
+    }
+
+    // Call the function to generate random coordinates
+    generate_coordinates(*num_coordinates, coordinates, min_range, max_range);
+
+    // Return the dynamically allocated array of coordinates
+    return coordinates;
 }
