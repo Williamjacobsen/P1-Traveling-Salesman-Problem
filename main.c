@@ -129,6 +129,8 @@ int main(void)
                 break;
             case 1:
                 coordinates = read_from_file(&lengthOfInput);
+                if (coordinates == NULL)
+                    option = -1;
                 break;
             case 2:
                 coordinates = random_coordinate_generator(&lengthOfInput);

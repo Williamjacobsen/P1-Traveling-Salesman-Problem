@@ -44,7 +44,12 @@ Coordinate* read_from_file(int* number_of_coordinates)
     if (input_file == NULL)
     {
         printf("Could not open file.\n");
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
+
+        printf("Press enter to continue");
+        fflush(stdin);
+        getchar();
+        return NULL;
     }
 
     // Count the number of lines (coordinates) in the file
@@ -56,7 +61,12 @@ Coordinate* read_from_file(int* number_of_coordinates)
     {
         printf("Memory allocation failed.\n");
         fclose(input_file);
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
+
+        printf("Press enter to continue");
+        fflush(stdin);
+        getchar();
+        return NULL;
     }
 
     // Rewind the file pointer to the beginning of the file to start reading coordinates
