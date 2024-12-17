@@ -2,42 +2,35 @@
 
 double two_opt(Coordinate* path, int length_coordinates, Coordinate* solution[length_coordinates])
 {
-    int amountOfSpecialRoads = 0;
-    struct specialRoad specialRoads[amountOfSpecialRoads];
-
-    //specialRoads[0].from = path[0];
-    //specialRoads[0].to = path[1];
-    //specialRoads[0].speed = 70; // 70 to 80, not used to used, cheap to expensive
-
     double cur_total_cost = 0;
+
     for (int i = 0; i < length_coordinates - 1; i++)
     {
-        cur_total_cost += travelCost(path[i], path[i + 1], specialRoads, amountOfSpecialRoads);
+        cur_total_cost += travelCost(path[i], path[i + 1]);
     }
-    cur_total_cost += travelCost(path[length_coordinates - 1], path[0], specialRoads, amountOfSpecialRoads);;
+    cur_total_cost += travelCost(path[length_coordinates - 1], path[0]);
 
     int improvement = 1;
+
     while (improvement)
     {
         improvement = 0;
 
         for (int i = 0; i < length_coordinates - 1; i++)
         {
-            for (int j = i + 1; j < length_coordinates; j++) // not sure about -1 or j+1%len
+            for (int j = i + 1; j < length_coordinates; j++)
             {
                 double old_cost =
-                    travelCost(path[i], path[i + 1 % length_coordinates], specialRoads, amountOfSpecialRoads)
-                    + travelCost(path[j], path[j + 1 % length_coordinates], specialRoads, amountOfSpecialRoads);
+                    travelCost(path[i], path[(i + 1) % length_coordinates]) +
+                    travelCost(path[j], path[(j + 1) % length_coordinates]);
 
                 double new_cost =
-                    travelCost(path[i], path[j], specialRoads, amountOfSpecialRoads)
-                    + travelCost(path[i + 1 % length_coordinates], path[j + 1 % length_coordinates], specialRoads,
-                                 amountOfSpecialRoads);
-
+                    travelCost(path[i], path[j]) +
+                    travelCost(path[(i + 1) % length_coordinates], path[(j + 1) % length_coordinates]);
 
                 if (new_cost < old_cost)
                 {
-                    for (int k = 0; k < (j - i) / 2; k++)
+                    for (int k = 0; k <= (j - i - 1) / 2; k++)
                     {
                         Coordinate temp = path[i + 1 + k];
                         path[i + 1 + k] = path[j - k];

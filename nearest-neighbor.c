@@ -4,9 +4,6 @@
 double nearest_neighbor(Coordinate* coordinates, int number_of_coordinates, int start_coordinate,
                         Coordinate* solution[number_of_coordinates])
 {
-    int amountOfSpecialRoads = 0;
-    struct specialRoad specialRoads[amountOfSpecialRoads];
-
     double total_cost = 0;
     int current_coordinate_index = start_coordinate;
     int coordinates_added = 0;
@@ -36,8 +33,7 @@ double nearest_neighbor(Coordinate* coordinates, int number_of_coordinates, int 
         {
             if (!visited[i])
             {
-                current_cost = travelCost(coordinates[current_coordinate_index], coordinates[i], specialRoads,
-                                          amountOfSpecialRoads);
+                current_cost = travelCost(coordinates[current_coordinate_index], coordinates[i]);
                 if (current_cost < closest_cost)
                 {
                     closest_cost = current_cost;
@@ -58,8 +54,7 @@ double nearest_neighbor(Coordinate* coordinates, int number_of_coordinates, int 
     }
 
     // Add the cost from the last unvisited coordinate to the starting coordinate, to the total cost
-    total_cost += travelCost(coordinates[current_coordinate_index], coordinates[start_coordinate], specialRoads,
-                             amountOfSpecialRoads);
+    total_cost += travelCost(coordinates[current_coordinate_index], coordinates[start_coordinate]);
 
     // Add the start coordinate to the end of the tour, since the TSP returns back to the starting coordinate
     solution[coordinates_added] = &coordinates[start_coordinate];

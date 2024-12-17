@@ -9,14 +9,23 @@
 #include <conio.h>
 #include "header.h"
 
+void clear_terminal()
+{
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
 /*
     intro() is used for showing the "banner" or fancy menu screen
 */
 void intro()
 {
-    system("cls");
+    clear_terminal();
     fflush(stdout);
-    printf("\n    === Menu ===\n\n");
+    printf("\n    === Solving The Traveling Salesman Problem ===\n\n");
 }
 
 /*
@@ -48,7 +57,7 @@ void print_options(int count, const char* options[], int current)
 */
 int menu(const char* options[], int count)
 {
-    int current = -1;
+    int current = 0;
     int loop = 1;
 
     while (loop)
@@ -111,7 +120,7 @@ int main(void)
         {
             option = menu(inputOptions, sizeof(inputOptions) / sizeof(const char*));
 
-            system("cls");
+            clear_terminal();
 
             switch (option)
             {
@@ -150,6 +159,7 @@ int main(void)
                 {
                     print_result(lengthOfInput, solution, cost);
                 }
+                option = -1;
                 break;
             case 1:
                 cost = two_opt(coordinates, lengthOfInput, solution);
@@ -157,11 +167,14 @@ int main(void)
                 {
                     print_result(lengthOfInput, solution, cost);
                 }
+                option = -1;
                 break;
             case 2:
                 continue;
             case 3:
+                clear_terminal();
                 help_algorithm();
+                option = -1;
                 break;
             default:
                 printf("Invalid option\n");
@@ -169,8 +182,12 @@ int main(void)
             }
         }
 
-        fflush(stdin);
-        getchar();
+        if (option != 2)
+        {
+            printf("Press enter to continue");
+            fflush(stdin);
+            getchar();
+        }
     }
 
     return 0;
@@ -178,11 +195,15 @@ int main(void)
 
 void print_result(int number_of_coordinates, Coordinate* solution[number_of_coordinates], double total_cost)
 {
-    printf("Total Cost: %lf\n\n", total_cost);
+    printf("\nTotal Cost: %lf\n\n", total_cost);
     printf("Tour:\n");
 
     for (int i = 0; i < number_of_coordinates + 1; ++i)
     {
         printf("(%d, %d)\n", solution[i % number_of_coordinates]->x, solution[i % number_of_coordinates]->y);
     }
+
+    fflush(stdin);
+    printf("\nPress enter to continue...");
+    getchar();
 }

@@ -15,19 +15,20 @@ double fuelLitersSpentAtSpeed(int x)
         29.473711506) / 100;
 }
 
-double travelCost(Coordinate from, Coordinate to, struct specialRoad specialRoads[], int amountOfSpecialRoads)
+double travelCost(Coordinate from, Coordinate to/*, struct specialRoad specialRoads[], int amountOfSpecialRoads*/)
 {
     int speed = default_speed;
     double distance = fdistance(from, to);
 
-    for (int i = 0; i < amountOfSpecialRoads; i++)
-    {
-        if (specialRoads[i].from.x == from.x && specialRoads[i].from.y == from.y &&
-            specialRoads[i].to.x == to.x && specialRoads[i].to.y == to.y)
-        {
-            speed = specialRoads[i].speed;
-        }
-    }
+    // assume all roads are 50km/h for simplicity, and due to us not having access to a real road network
+    //for (int i = 0; i < amountOfSpecialRoads; i++)
+    //{
+    //    if (specialRoads[i].from.x == from.x && specialRoads[i].from.y == from.y &&
+    //        specialRoads[i].to.x == to.x && specialRoads[i].to.y == to.y)
+    //    {
+    //        speed = specialRoads[i].speed;
+    //    }
+    //}
 
     double time = distance / speed;
     int hourlyRate = 150;
