@@ -47,3 +47,7 @@
 37	152	7562300803699937	CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj	30b8dfb3cdd886a3
 27	162	7562300803599983	CMakeFiles/main.dir/main.c.obj	51173799635f9bba
 163	333	7562300804959901	main.exe	5c1ff4b8cd1fe36d
+37	467	7562584721039008	CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj	30b8dfb3cdd886a3
+468	745	7562584725339029	main.exe	5c1ff4b8cd1fe36d
+24	427	7562585737693367	CMakeFiles/main.dir/get-coordinates-from-terminal.c.obj	30b8dfb3cdd886a3
+428	584	7562585741745536	main.exe	5c1ff4b8cd1fe36d

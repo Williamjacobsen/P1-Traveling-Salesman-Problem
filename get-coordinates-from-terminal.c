@@ -65,7 +65,7 @@ Coordinate* get_coordinates_from_terminal(int* coordinate_count)
         }
     }
 
-    if (*coordinate_count == 0)
+    if (count == 0)
         return NULL;
 
     *coordinate_count = count;
