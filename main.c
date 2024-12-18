@@ -25,7 +25,8 @@ void intro()
 {
     clear_terminal();
     fflush(stdout);
-    printf("\n    === Solving The Traveling Salesman Problem ===\n\n");
+    printf("\n    === Solving The Traveling Salesman Problem ===\n");
+    printf("\n    Navigate the menu using up and down arrow keys or use the number associated.\n\n");
 }
 
 /*
@@ -41,11 +42,11 @@ void print_options(int count, const char* options[], int current)
     {
         if (i == current)
         {
-            printf(" >  \x1B[7m%s\x1B[0m\n", options[i]); // Highlight selected option
+            printf(" >  %d. \x1B[7m%s\x1B[0m\n", i+1, options[i]); // Highlight selected option
         }
         else
         {
-            printf("    %s\n", options[i]);
+            printf("    %d. %s\n", i+1, options[i]);
         }
     }
 }
@@ -114,7 +115,7 @@ int main(void)
     while (1)
     {
         int option = -1;
-        Coordinate* coordinates;
+        Coordinate* coordinates = NULL;
         int lengthOfInput = 0;
         while (option == -1)
         {
@@ -129,8 +130,6 @@ int main(void)
                 break;
             case 1:
                 coordinates = read_from_file(&lengthOfInput);
-                if (coordinates == NULL)
-                    option = -1;
                 break;
             case 2:
                 coordinates = random_coordinate_generator(&lengthOfInput);
@@ -143,6 +142,9 @@ int main(void)
                 printf("Invalid option\n");
                 break;
             }
+
+            if (coordinates == NULL)
+                option = -1;
         }
 
         fflush(stdout);
@@ -197,7 +199,8 @@ int main(void)
 
 void print_result(int number_of_coordinates, Coordinate* solution[number_of_coordinates], double total_cost)
 {
-    printf("\nTotal Cost: %lf\n\n", total_cost);
+    printf("\nTotal Cost: %.2lf DKK\n\n", total_cost);
+
     printf("Tour:\n");
 
     for (int i = 0; i < number_of_coordinates + 1; ++i)

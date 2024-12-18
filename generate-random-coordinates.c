@@ -28,7 +28,7 @@ Coordinate* random_coordinate_generator(int* num_coordinates)
     scanf("%d", &min_range);
     printf("Enter the maximum range: ");
     scanf("%d", &max_range);
-
+    
     if (min_range > max_range)
     {
         printf("Invalid range. Minimum range cannot be greater than maximum range.\n");
@@ -47,5 +47,7 @@ Coordinate* random_coordinate_generator(int* num_coordinates)
     generate_coordinates(*num_coordinates, coordinates, min_range, max_range);
 
     // Return the dynamically allocated array of coordinates
+    if (*num_coordinates == 0)
+        return NULL;
     return coordinates;
 }

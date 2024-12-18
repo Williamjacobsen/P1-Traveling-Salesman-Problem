@@ -14,6 +14,7 @@ typedef struct
     int speed;
 };*/
 
+void clear_terminal();
 double travelCost(Coordinate from, Coordinate to/*, struct specialRoad specialRoads[], int amountOfSpecialRoads*/);
 Coordinate* random_coordinate_generator(int* num_coordinates);
 Coordinate* read_from_file(int* number_of_coordinates);

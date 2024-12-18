@@ -18,10 +18,9 @@ Coordinate* get_coordinates_from_terminal(int* coordinate_count)
         exit(1);
     }
 
-    printf("Enter coordinates as 'x y' or type 'finished' to stop:\n");
-
     while (1)
     {
+        printf("Enter coordinates as 'x y' or type 'finished' to stop:\n");
         printf("Enter coordinates (x y): ");
         fgets(input, sizeof(input), stdin);
 
@@ -54,20 +53,20 @@ Coordinate* get_coordinates_from_terminal(int* coordinate_count)
             coordinates[count].y = y;
             count++;
 
+            clear_terminal();
+
             printf("You entered: x = %d, y = %d\n", x, y);
         }
         else
         {
+            clear_terminal();
+
             printf("Invalid input. Please enter two integer coordinates or 'finished'.\n");
         }
     }
 
-    // Print all stored coordinates
-    printf("\nYou entered the following coordinates:\n");
-    for (int i = 0; i < count; i++)
-    {
-        printf("Coordinate %d: x = %d, y = %d\n", i + 1, coordinates[i].x, coordinates[i].y);
-    }
+    if (*coordinate_count == 0)
+        return NULL;
 
     *coordinate_count = count;
     return coordinates;
